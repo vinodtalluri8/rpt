@@ -1,0 +1,87 @@
+.searchChecklistButtons{
+    margin-left : -51px;
+    padding-left: 30px;
+    /* top: 190px; */
+    margin-top: 10px;
+    padding-top :10px;
+    position: absolute !important;
+
+ 
+}
+/**  CSS Styling for the search checklist page **/
+
+.paddingTopClass {
+    padding-top: 10px;
+}
+
+.paddingButtons {
+    margin-top: 20px!important;
+}
+
+.ui-dropdown .ui-dropdown-panel {
+    min-width: 100%;
+    width: max-content;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+}
+
+.panel-title {
+    color: #7e2d40
+}
+
+
+
+
+.title-input {
+    width: 16em;
+}
+
+.arrow-color {
+    color: black;
+    margin-left: -1.7em;
+    font-weight: initial;
+    cursor: pointer;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+}
+
+.no-padding-left {
+    padding-left: 0px !important;
+}
+
+.section-padding {
+    padding-top: 0px;
+}
+
+.paddingDataClass {
+    padding-bottom: 15px!important;
+    margin-left: 1px;
+}
+
+.panel-title h3 {
+    font-size: 24px;
+}
+app-button {
+    padding-left: 20px;
+}
+#content {
+    padding-top: 0px !important;
+    
+}
+.paddingright{
+    padding-left: 45px;
+}
+.mleft{
+    margin-left: -8px;
+}

@@ -1,0 +1,40 @@
+.displayReportButton {
+    position: absolute !important;
+    margin-left: -50px;
+    padding-top: 10px;
+    padding-left: 30px;
+    /* top: 190px; */
+    margin-top: 10px;
+}
+.paddingButtons {
+    margin-top: 20px!important;
+}
+.title-input {
+    width: 16em;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+}
+
+/* .section-padding {
+    padding-top: 0px;
+}
+
+.paddingDataClass {
+    padding-bottom: 15px!important;
+    margin-left: 1px;
+} */
+
+.panel-title h3 {
+    font-size: 24px;
+}
+app-button {
+    padding-left: 20px;
+}

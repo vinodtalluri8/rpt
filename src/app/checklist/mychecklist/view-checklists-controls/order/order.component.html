@@ -1,0 +1,77 @@
+<div class="panel panel-default" style="margin-left:-3px">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12" style="margin-left:-4px">
+      <app-breadcrumbs [items]='itemsPath' [home]='home'></app-breadcrumbs>
+    </div>
+  </div>
+  <p-growl [(value)]="msgs"></p-growl>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 panel panel-default">
+      <h3 class="panel-title " style="font-size: 24px; padding-left:5px">
+        <fa class="arrow-color" style="font-size: 17px;" name="chevron-left" size='0.5x' (click)='back()'> </fa>Modify Checklist Order</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h3 class="panel-title" style="font-size: 24px; padding-left:26px">{{checklistName}}</h3>
+    </div>
+  </div>
+
+
+
+  <div class="row gridPadding">
+    <div class="toolbar" *ngIf="viewDisplayResults && viewDisplayResults.length > 0">
+      <img class="imgAlign pull-right" (click)="do.exportCSV()" src="./assets/icon-excel-export.png" alt="Export to Excel.png">
+    </div>
+    <p-table #do [columns]="colHeaders" [value]="viewDisplayResults" [responsive]="true" [paginator]="isPaginator" [rows]="selectedRows"
+      [alwaysShowPaginator]="false" [exportFilename]="this.exportFileName" [reorderableColumns]="true" (onRowReorder)='reorder($event.dragIndex, $event.dropIndex)'>
+      <ng-template pTemplate="caption">
+        <div class="ui-helper-clearfix">
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns" [style.width]="col.width" [pSortableColumn]="col.field" pResizableColumn>
+            {{col.header}}
+            <p-sortIcon *ngIf="col.field !== '' " [field]="col.field"></p-sortIcon>
+          </th>
+        </tr>
+        <tr *ngIf="filterable && viewDisplayResults && viewDisplayResults.length > 0">
+
+          <th *ngFor="let col of columns" [style.width]="col.width" pResizableColumn>
+
+            <input *ngIf="col.field !== '' " pInputText type="text" placeholder="Filter" (input)="do.filter($event.target.value, col.field, 'contains')">
+
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns" let-index="rowIndex">
+        <tr [pSelectableRow]="rowData" [pReorderableRow]="index">
+
+          <td *ngFor="let col of columns" [style.width]="col.width" class="ui-resizable-column">
+            <ng-container *ngIf="col.field !== '' ; else elseTemplate">
+              {{rowData[col.field]}}
+            </ng-container>
+            <ng-template #elseTemplate>
+              <em class="fa fa-bars" pReorderableRowHandle></em>
+            </ng-template>
+
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+          <td [attr.colspan]="columns.length" style="text-align: center">
+            No records found
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorright" let-state>
+        <div class="grid-page-dropdown">    
+        <app-dropdown [datasource]='displayRows' (selectedItemChange)='checkAndEnablePage($event)' [selectedItem]='selectedRows'></app-dropdown>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+
+</div>

@@ -1,0 +1,156 @@
+<!-- search controls screen display -->
+
+<div class="panel panel-default" style="padding-left: 3px">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12" style="margin-left: -10px;">
+      <app-breadcrumbs [items]='itemsPath' [home]='home' ></app-breadcrumbs>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5 col-md-5 col-lg-8 panel panel-default">
+      <div class="panel-heading section-padding">
+        <h3 class="panel-title " style="font-size: 24px; margin-left: -2px;">Search Controls</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col.sm-12 col-md-12 col-lg-12 padding-zero" *ngIf="msgs.length > 0">
+    <p-growl [(value)]="msgs"></p-growl>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="title" class="control-label">Title Contains</label>
+      <div>
+        <app-input (inputTextSelected)='this.titleContains=$event' [value]='titleContains' maxlength="60"></app-input>
+      </div> 
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="group" class="control-label">Group</label>
+	    <div>
+      <app-dropdown [datasource]='group' (selectedItemChange)='onChangeGroup($event)' [selectedItem]='selectedGroup'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="department" class="control-label">Department</label>
+      <div>
+        <app-dropdown [datasource]='department' (selectedItemChange)='this.selectedDepartment = $event' [selectedItem]='selectedDepartment'></app-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="frequency" class="control-label">Frequency</label>
+      <div>
+        <app-dropdown [datasource]='frequency' (selectedItemChange)='this.selectedFrequency = $event' [selectedItem]='selectedFrequency'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="assigned" class="control-label">Any Assigned</label>
+      <div>
+        <app-dropdown [datasource]='anyAssigned' (selectedItemChange)='this.selectedAnyAssigned = $event' [selectedItem]='selectedAnyAssigned'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="reviewer" class="control-label">Reviewer</label>
+      <div>
+        <app-dropdown [datasource]='reviewer' (selectedItemChange)='this.selectedReviewer = $event' [selectedItem]='selectedReviewer'></app-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="primary" class="control-label">Primary</label>
+      <div>
+        <app-dropdown [datasource]='primary' (selectedItemChange)='this.selectedPrimary = $event' [selectedItem]='selectedPrimary'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="backup" class="control-label">Backup</label>
+      <div>
+        <app-dropdown [datasource]='backup' (selectedItemChange)='this.selectedBackup = $event' [selectedItem]='selectedBackup'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="reviewlength" class="control-label">Review Length</label>   
+      <div class="row">
+        <div class="col-sm-3 col-md-3 col-lg-3; group" style="padding-right: 0px !important">
+          <div>
+            <app-dropdown [datasource]='reviewLength' (selectedItemChange)='this.selectedReviewLength = $event' [selectedItem]='selectedReviewLength'></app-dropdown>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6; group" style="padding-right: 0px !important">
+          <div>
+            <app-input appNumberonly (inputTextSelected)='this.review=$event' [value]='review' maxlength="60"></app-input>
+          </div>
+        </div>
+  
+        <div class="col-sm-3 col-md-3 col-lg-3" style="padding-right: 0px !important; padding-left: 0px !important; line-height: 40px;">
+          <span class="infotext">Hours</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="risk" class="control-label">Risk</label>
+      <div>
+        <app-dropdown [datasource]='risk' (selectedItemChange)='this.selectedRisk = $event' [selectedItem]='selectedRisk'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="evaluation" class="control-label">Evaluation</label>
+      <div>
+        <app-dropdown [datasource]='evaluation' (selectedItemChange)='this.selectedEvaluation = $event' [selectedItem]='selectedEvaluation'></app-dropdown>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="controllength" class="control-label">Control Length</label>
+      <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3; group" style="padding-right: 0px !important">
+        <div>
+          <app-dropdown [datasource]='controlLength' (selectedItemChange)='this.selectedControlLength = $event' [selectedItem]='selectedControlLength'></app-dropdown>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6; group" style="padding-right: 0px !important">
+        <div>
+          <app-input appNumberonly (inputTextSelected)='this.control=$event' [value]='control' maxlength="60"></app-input>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-md-3 col-lg-3" style="padding-right: 0px !important; padding-left: 0px !important; line-height: 40px;">
+        <span class="infotext">Hours</span>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="status" class="control-label">Status</label><br>
+      <div>
+        <app-dropdown [datasource]='status' (selectedItemChange)='this.selectedStatus = $event' [selectedItem]='selectedStatus'></app-dropdown>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row searchControlButtons">
+  <app-button label='Search' (click)="searchControl()" styleClass='button-action'></app-button>
+  <app-button label='Clear All' (click)="resetAll()" styleClass='button-cancel'></app-button>
+</div> 

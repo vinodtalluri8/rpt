@@ -1,0 +1,62 @@
+.searchControlButtons{
+    margin-left : -46px;
+    padding-left: 30px;
+    /* top: 190px; */
+    padding-top :10px;
+    margin-top: 10px;
+    position: absolute !important;
+
+}
+
+.paddingButtons {
+    margin-top: 20px!important;
+}
+
+.ui-dropdown .ui-dropdown-panel {
+    min-width: 100%;
+    width: max-content;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+}
+
+
+.title-input {
+    width: 16em;
+}
+
+.arrow-color {
+    color: black;
+    margin-left: -1.7em;
+    font-weight: initial;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+}
+
+.section-padding {
+    padding-top: 0px;
+}
+
+.panel-title h3 {
+    font-size: 24px;
+}
+app-button {
+    padding-left: 20px;
+}
+
+.infotext {
+    display: flex;
+  }
+
+
+

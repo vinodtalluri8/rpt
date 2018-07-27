@@ -1,0 +1,88 @@
+<div class="panel panel-default" style="margin-left:-3px">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12" style="margin-left:-4px">
+            <app-breadcrumbs [items]='itemsPath' [home]='home'></app-breadcrumbs>
+        </div>
+    </div>
+</div>
+<h3 class="panel-title" style="font-size: 24px; padding-left:5px">
+    <fa class="arrow-color" style="font-size: 17px;" name="chevron-left" size='0.5x' (click)='back()'> </fa>Checklists</h3>
+
+
+<div class="col.sm-12 col-md-12 col-lg-12 padding-zero" *ngIf="msgs.length > 0">
+    <p-growl [(value)]="msgs"></p-growl>
+</div>
+<div class="row gridPadding">
+    <div class="toolbar" *ngIf="searchChecklistResults && searchChecklistResults.length > 0">
+        <img class="imgAlign pull-right" (click)="scr.exportCSV()" src="./assets/icon-excel-export.png" alt="Export to Excel.png">
+    </div>
+    <p-table #scr [columns]="colHeaders" [value]="searchChecklistResults" [responsive]="true" [paginator]="isPaginator" [rows]="selectedRows"
+        [alwaysShowPaginator]="false" [exportFilename]="this.exportFileName" [loading]="loading">
+        <ng-template pTemplate="caption">
+            <div class="ui-helper-clearfix">
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [style.width]="col.width" [pSortableColumn]="col.field" pResizableColumn>
+                    {{col.header}}
+                    <p-sortIcon *ngIf="col.field !== 'action' " [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+            <tr *ngIf="filterable && searchChecklistResults && searchChecklistResults.length > 0">
+                <th *ngFor="let col of columns" [style.width]="col.width">
+
+                    <input *ngIf="col.field !== 'action'" pInputText type="text" placeholder="Filter" (input)="scr.filter($event.target.value, col.field, 'contains')">
+
+                </th>
+            </tr>
+        </ng-template>
+
+
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns" [style.width]="col.width">
+
+                    <ng-container *ngIf="col.field == 'action'|| col.field == 'checklistName'; else elseTemplate">
+                        <div class="row" *ngIf="col.field == 'action'">
+                            <div class="col-sm-5 col-md-5 col-lg-5 displaycolor">
+                                <a class="hyperlink" (click)="delete(rowData['checklistId'])">Delete</a>
+                            </div>
+                            <div class="col-sm-5 col-md-5 col-lg-5 displaycolor">
+                                <a class="hyperlink" (click)="modify(rowData)">Modify</a>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="col.field == 'checklistName'">
+                            <div class="col-sm-12 col-md-12 col-lg-12 displaycolor">
+                                <a class="hyperlink" (click)="checklistDetails(rowData['checklistId'],rowData['status'],rowData['checklistName'])">{{rowData['checklistName']}}</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        {{rowData[col.field]}}
+                    </ng-template>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage"  let-columns>
+            <tr>
+                <td [attr.colspan]="columns.length"  style="text-align: center">
+                    No records found
+                    </td>
+            </tr>
+            </ng-template>
+
+            <ng-template pTemplate="paginatorright" let-state>
+                <div class="grid-page-dropdown">
+                    <app-dropdown [datasource]='displayRows' (selectedItemChange)='checkAndEnablePage($event)' [selectedItem]='selectedRows'></app-dropdown>
+                </div>
+            </ng-template>
+    </p-table>
+</div>
+<div *ngIf="searchChecklistResults && searchChecklistResults.length > 0 && !isPaginator" class="pageAlign">
+    <div class="grid-page-dropdown">
+        <app-dropdown [datasource]='displayRows' (selectedItemChange)='checkAndEnablePage($event)' [selectedItem]='selectedRows'></app-dropdown>
+    </div>
+</div>
+<p-confirmDialog appendTo="body"></p-confirmDialog>
