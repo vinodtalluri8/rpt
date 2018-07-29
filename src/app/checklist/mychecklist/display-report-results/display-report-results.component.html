@@ -42,7 +42,7 @@
         <td *ngFor="let col of columns" [style.width]="col.width" class="ui-resizable-column">
           <ng-container *ngIf="col.field == 'checklist'; else elseTemplate">
             <div>
-              <a class="hyperlink">{{rowData['checklist']}}</a>
+              <a class="hyperlink" routerLink = '/checklists/viewChecklistsControls'>{{rowData['checklist']}}</a>
             </div>
           </ng-container>
           <ng-template #elseTemplate>

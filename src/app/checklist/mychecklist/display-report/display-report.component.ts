@@ -40,6 +40,7 @@ export class DisplayReportComponent implements OnInit {
   preloadData() {
     this.reportService.getReport().subscribe(data => {
       this.report = data;
+      console.log('report data......',data);
     });
     this.checklistCommonService.getGroup().subscribe(data => {
       this.group = data;
@@ -56,7 +57,8 @@ export class DisplayReportComponent implements OnInit {
     }
   }
   displayReports() {
+      this.reportService.setReportType(this.selectedReport.code);
       this.router.navigate([routerConstants.displayreports]);
-      console.log(this.dataJson, 'this.dataJson ');
+      console.log(this.dataJson, 'this.dataJson');
     }
 }

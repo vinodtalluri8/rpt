@@ -12,7 +12,7 @@ export const routerConstants = {
     viewchecklistControl: checklist +  'viewChecklistsControls',
     addControl: checklist + 'addcontrol',
     reports: checklist + 'reports',
-    displayreports: checklist + 'reports' + 'reportresults',
+    displayreports: checklist + 'reportresults',
     assigned : 'assigned/',
     viewassigned: 'assigned/' + 'viewassigned',
     manage: 'managed',

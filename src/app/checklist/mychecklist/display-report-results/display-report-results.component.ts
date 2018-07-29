@@ -3,6 +3,8 @@ import { Message } from 'primeng/components/common/api';
 import { MenuItem, SelectItem } from 'primeng/api';
 import { Location } from '@angular/common';
 import { routerConstants } from '../../../core/constants/routerConstants';
+import { Router, ActivatedRoute, RouterLink, UrlSegment } from '@angular/router';
+import { ReportService } from "../services/report.service";
 
 @Component({
   selector: 'app-display-report-results',
@@ -29,13 +31,18 @@ export class DisplayReportResultsComponent implements OnInit {
   value: string;
   msgs: Message[] = [];
   home: MenuItem;
-  constructor(private location: Location) {
+  reportType;
+  constructor(private location: Location, private activatedRoute: ActivatedRoute, private reportService: ReportService) {
     /** Initilase the breadcrumbs navigation data **/
     this.itemsPath = [
       { label: 'Checklists', routerLink: [routerConstants.defaultRoute] },
       { label: 'Reports', routerLink: ['/' + routerConstants.reports] },
       {label: 'Search results'}
     ];
+      this.activatedRoute.queryParams.subscribe(params => {
+        this.reportType = params['reportType'];
+        console.log('report type',this.reportType);
+    });
     this.home = { icon: 'fa fa-home' };
     this.displayRows = [{
         label: '15',
@@ -62,7 +69,323 @@ export class DisplayReportResultsComponent implements OnInit {
     this.exportFileName = 'EvaluationReport';
     this.selectedRows = 15;
     this.dialogHeader = 'Add New Value';
-    this.evaluationReportlabelList = [{
+    // this.evaluationReportlabelList = [{
+    //     field: 'evaluation',
+    //     header: 'Evaluation'
+    //   },
+    //   {
+    //     field: 'frequency',
+    //     header: 'Frequency'
+    //   },
+    //   {
+    //     field: 'checklist',
+    //     header: 'Checklist'
+    //   },
+    //   {
+    //     field: 'department',
+    //     header: 'Department'
+    //   },
+    //   {
+    //     field: 'control',
+    //     header: 'Control'
+    //   },
+    //   {
+    //     field: 'controlLength',
+    //     header: 'Control Length'
+    //   },
+    //   {
+    //     field: 'reviewLength',
+    //     header: 'Review Length'
+    //   },
+    //   {
+    //     field: 'savings',
+    //     header: 'Savings'
+    //   }
+    // ];
+    this.evaluationReportdatalist = [{
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'AIM Currency Conversion',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'AIM Currency Conversion',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'AIM Currency Conversion',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'AIM Currency Conversion',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'AIM Currency Conversion',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      },
+      {
+        'evaluation': 'Candidate for Automation',
+        'frequency': 'Ad Hoc',
+        'checklist': 'Analytic Support Ad Hoc',
+        'department': 'Information Management',
+        'control': 'AIM Currency Conversion',
+        'controlLength': '50',
+        'reviewLength': '50',
+        'savings': '12.00',
+        'primary': 'AIM Currency Conversion',
+        'title': 'AIM Currency Conversion',
+        'controldescription': 'AIM Currency Conversion'
+      }
+    ];
+  }
+
+  ngOnInit() {
+    this.reportType = this.reportService.getReportType();
+    console.log('report type......',this.reportType);
+    // Controls without a procedure 
+    if(this.reportType === 'NY'){
+      this.evaluationReportlabelList = [
+      {
+        field: 'checklist',
+        header: 'Checklist'
+      },
+      {
+        field: 'control',
+        header: 'Contorl'
+      },
+      {
+        field: 'primary',
+        header: 'Primary'
+      },
+    ];
+    }else if(this.reportType === 'RM'){ //Evaluation Report
+      this.evaluationReportlabelList = [{
         field: 'evaluation',
         header: 'Evaluation'
       },
@@ -95,210 +418,63 @@ export class DisplayReportResultsComponent implements OnInit {
         header: 'Savings'
       }
     ];
-    this.evaluationReportdatalist = [{
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'AIM Currency Conversion',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
+    }else if(this.reportType === 'LDN'){ // procedure checklist
+      this.evaluationReportlabelList = [{
+        field: 'title',
+        header: 'Title'
       },
       {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
+        field: 'checklist',
+        header: 'Checklist'
       },
       {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'AIM Currency Conversion',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'AIM Currency Conversion',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'AIM Currency Conversion',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'AIM Currency Conversion',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
-      },
-      {
-        'evaluation': 'Candidate for Automation',
-        'frequency': 'Ad Hoc',
-        'checklist': 'Analytic Support Ad Hoc',
-        'department': 'Information Management',
-        'control': 'AIM Currency Conversion',
-        'controlLength': '50',
-        'reviewLength': '50',
-        'savings': '12.00'
+        field: 'controldescription',
+        header: 'Control description'
       }
     ];
+    }else if(this.reportType === 'IST'){ //Procedures with 
+      this.evaluationReportlabelList = [{
+        field: 'title',
+        header: 'Title'
+      },
+      {
+        field: 'major',
+        header: 'Major'
+      },
+      {
+        field: 'minor',
+        header: 'Minor'
+      },
+      {
+        field: 'department',
+        header: 'Department'
+      }
+    ];
+    }else if(this.reportType === 'PRS'){ // Yearly Summary
+      this.evaluationReportlabelList = [
+      {
+        field: 'checklist',
+        header: 'Checklist'
+      },
+      {
+        field: 'department',
+        header: 'Department'
+      },
+       {
+        field: 'frequency',
+        header: 'Frequency'
+      },
+      {
+        field: 'controlLength',
+        header: 'Control Length'
+      },
+      {
+        field: 'reviewLength',
+        header: 'Review Length'
+      }
+    ];
+    }else ;
   }
-
-  ngOnInit() {}
   back() {
     this.location.back();
   }
