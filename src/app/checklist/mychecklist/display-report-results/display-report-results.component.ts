@@ -113,7 +113,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -126,7 +128,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -139,7 +143,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -152,7 +158,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -165,7 +173,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -178,7 +188,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -191,7 +203,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -204,7 +218,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -217,7 +233,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -230,7 +248,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -243,7 +263,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -256,7 +278,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -269,7 +293,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -282,7 +308,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -295,7 +323,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -308,7 +338,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -321,7 +353,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -334,7 +368,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -347,7 +383,9 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       },
       {
         'evaluation': 'Candidate for Automation',
@@ -360,16 +398,22 @@ export class DisplayReportResultsComponent implements OnInit {
         'savings': '12.00',
         'primary': 'AIM Currency Conversion',
         'title': 'AIM Currency Conversion',
-        'controldescription': 'AIM Currency Conversion'
+        'controldescription': 'AIM Currency Conversion',
+        'major':'AIM Currency Conversion',
+        'minor':'AIM Currency Conversion'
       }
     ];
   }
 
   ngOnInit() {
     this.reportType = this.reportService.getReportType();
-    console.log('report type......',this.reportType);
+    console.log('report type......@@@@@@@@@@@@@',this.reportType);
+    this.reportService.getReportData(this.reportType).subscribe( data =>{
+      // this.evaluationReportlabelList = data.labelData;
+      // this.evaluationReportdatalist = data.tableData;
+    });
     // Controls without a procedure 
-    if(this.reportType === 'NY'){
+    if(this.reportType.checklistReport.code === 'NY'){
       this.evaluationReportlabelList = [
       {
         field: 'checklist',
@@ -384,7 +428,7 @@ export class DisplayReportResultsComponent implements OnInit {
         header: 'Primary'
       },
     ];
-    }else if(this.reportType === 'RM'){ //Evaluation Report
+    }else if(this.reportType.checklistReport.code === 'RM'){ //Evaluation Report
       this.evaluationReportlabelList = [{
         field: 'evaluation',
         header: 'Evaluation'
@@ -418,7 +462,7 @@ export class DisplayReportResultsComponent implements OnInit {
         header: 'Savings'
       }
     ];
-    }else if(this.reportType === 'LDN'){ // procedure checklist
+    }else if(this.reportType.checklistReport.code === 'LDN'){ // procedure checklist
       this.evaluationReportlabelList = [{
         field: 'title',
         header: 'Title'
@@ -432,7 +476,7 @@ export class DisplayReportResultsComponent implements OnInit {
         header: 'Control description'
       }
     ];
-    }else if(this.reportType === 'IST'){ //Procedures with 
+    }else if(this.reportType.checklistReport.code === 'IST'){ //Procedures with 
       this.evaluationReportlabelList = [{
         field: 'title',
         header: 'Title'
@@ -450,7 +494,7 @@ export class DisplayReportResultsComponent implements OnInit {
         header: 'Department'
       }
     ];
-    }else if(this.reportType === 'PRS'){ // Yearly Summary
+    }else if(this.reportType.checklistReport.code === 'PRS'){ // Yearly Summary
       this.evaluationReportlabelList = [
       {
         field: 'checklist',

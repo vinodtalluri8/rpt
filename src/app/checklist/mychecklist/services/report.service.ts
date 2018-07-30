@@ -19,4 +19,8 @@ export class ReportService {
     return this.reportType;
   }
 
+  getReportData(data){
+    return this.httpClient.get(this.url,data);
+  }
+
 }

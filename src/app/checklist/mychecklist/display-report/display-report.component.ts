@@ -57,7 +57,11 @@ export class DisplayReportComponent implements OnInit {
     }
   }
   displayReports() {
-      this.reportService.setReportType(this.selectedReport.code);
+    this.dataJson = {
+    'checklistGroup': this.selectedGroup,
+    'checklistReport': this.selectedReport
+  };
+      this.reportService.setReportType(this.dataJson);
       this.router.navigate([routerConstants.displayreports]);
       console.log(this.dataJson, 'this.dataJson');
     }
